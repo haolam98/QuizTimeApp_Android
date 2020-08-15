@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/quick_access"
+        android:title="Quick Access"
+        android:icon="@drawable/ic_fire_orange_24dp" />
+    <item
+        android:id="@+id/my_account"
+        android:title="My Account"
+        android:icon="@drawable/ic_person_pin_blue_24dp" />
+
+
+</menu>
