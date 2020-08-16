@@ -1,15 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorYELLOW_background"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
     tools:context=".QuickAcessFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
+        android:id="@+id/mp_top_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:paddingTop="35dp"
+        android:paddingBottom="35dp"
+        android:text="@string/you_are_here_to"
+        android:textColor="@android:color/black"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_quickAccess_takeQuiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Quick Access Fragment" />
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_corners"
+        android:paddingTop="4dp"
+        android:text="@string/take_quiz"
+        android:textColor="@color/colorBlack"
+        android:textSize="50sp"
+        app:backgroundTint="@color/colorOrange" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/or"
+        android:textColor="@color/colorBlack"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:paddingTop="35dp"
+        android:paddingBottom="35dp"
+        />
+    <Button
+        android:id="@+id/button_quickAccess_makeQuiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_corners"
+        android:paddingTop="4dp"
+        android:text="@string/make_quiz"
+        android:textColor="@color/colorBlack"
+        android:textSize="50sp"
+        app:backgroundTint="@color/colorPurple" />
+
+</LinearLayout>

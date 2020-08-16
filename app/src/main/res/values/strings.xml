@@ -3,4 +3,25 @@
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="you_are_here_to">You are here to...</string>
+    <string name="take_quiz">TAKE QUIZ</string>
+    <string name="or">OR</string>
+    <string name="make_quiz">MAKE QUIZ</string>
+    <string name="title">Title: </string>
+    <string name="enter_quiz_s_title">Enter quiz\'s title</string>
+    <string name="duration">Duration: </string>
+    <string name="online_notice">Your quiz has been saved locally in offline storage.\nTo let others try your quiz, you have to make it online</string>
+    <string name="online_info">When you make your quiz available ONLINE, plenty of benefits are waiting for you to explore:\n
+        1) Your quiz will be saved on our database, which allows you to review and modify it\n
+        2) You can share and challenge others to do your quiz\n
+        - You will receive feedback (scores,ratings,review,etc) from whose taking your quiz\n
+        - You will also able to review, grade and send back feedback for whom doing your quiz\n
+        - There are no limits on how many people you share your quiz at one time. BUT there is a limit of 5 times ONLY for you to share a quiz with others.
+    </string>
+    <string name="offline_info">When your quiz is saved on local offline-storage. There are some restrictions:\n
+        1) Your quiz will be saved locally for 5 days. After 5 days, the system will automatically deleted your quiz\n
+        HOWEVER, you can always MAKE IT ONLINE before your quiz reaches 5-day-expiration\n
+        2) You can review your quiz, but cannot edit it. Edit/Modify feature only available when you make your quiz online\n
+    </string>
+
 </resources>
