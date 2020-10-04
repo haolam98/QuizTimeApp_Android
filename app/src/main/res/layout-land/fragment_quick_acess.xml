@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorYELLOW_background"
+    android:background="@color/colorWhite"
     android:orientation="vertical"
     android:paddingTop="20dp"
     tools:context=".QuickAcessFragment">
@@ -16,8 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
+        android:paddingBottom="10dp"
         android:text="@string/you_are_here_to"
         android:textColor="@android:color/black"
         android:textSize="36sp"
@@ -40,12 +39,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:text="@string/or"
         android:textColor="@color/colorBlack"
         android:textSize="30sp"
         android:textStyle="bold" />
+
     <Button
         android:id="@+id/button_quickAccess_makeQuiz"
         android:layout_width="wrap_content"

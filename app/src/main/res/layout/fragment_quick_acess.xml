@@ -40,13 +40,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:paddingTop="35dp"
+        android:paddingBottom="35dp"
         android:text="@string/or"
         android:textColor="@color/colorBlack"
         android:textSize="30sp"
-        android:textStyle="bold"
-        android:paddingTop="35dp"
-        android:paddingBottom="35dp"
-        />
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/button_quickAccess_makeQuiz"
         android:layout_width="wrap_content"

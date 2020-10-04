@@ -103,9 +103,27 @@
             android:textColor="@color/colorBlack"
             android:textSize="18sp"
             android:textStyle="bold" />
+
         <TextView
             android:id="@+id/textView_makeQuiz_totalQuestion"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView9"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score:"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView_makeQuiz_totalScore"
+            android:layout_width="109dp"
             android:layout_height="wrap_content"
             android:text=""
             android:textColor="@color/colorBlack"

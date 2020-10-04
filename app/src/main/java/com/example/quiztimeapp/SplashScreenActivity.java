@@ -19,11 +19,11 @@ public class SplashScreenActivity extends AppCompatActivity {
                 .withTargetActivity(MainPageActivity.class)
                 .withSplashTimeOut(5000)
                 .withBackgroundColor(Color.parseColor("#FFFFFF"))
-                .withBeforeLogoText("WELCOME TO QUIZ TIME APP")
+                .withBeforeLogoText("HEY, IT'S QUIZ TIME!!")
                 .withFooterText("Designed and Developed By Hao Lam")
                 .withLogo(R.mipmap.quiz_time_icon);
         config.getBeforeLogoTextView().setTextColor(Color.BLACK);
-        config.getBeforeLogoTextView().setTextSize(20);
+        config.getBeforeLogoTextView().setTextSize(30);
         config.getFooterTextView().setTextColor(Color.BLACK);
         config.getFooterTextView().setTextSize(10);
 

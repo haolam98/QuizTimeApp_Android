@@ -131,7 +131,7 @@
             android:layout_gravity="right"
             android:clickable="true"
             android:tint="@color/colorWhite"
-            android:visibility="invisible"
+            android:visibility="visible"
             app:backgroundTint="@color/colorDarkPurple"
             app:srcCompat="@drawable/ic_add_purple_24" />
     </LinearLayout>
