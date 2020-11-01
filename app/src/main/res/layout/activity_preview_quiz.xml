@@ -6,20 +6,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".PreviewQuizActivity">
+    tools:context=".feature_makequiz.PreviewQuizActivity">
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/ic_eye_black_24"
         android:paddingBottom="20dp"
-        android:text="PREVIEW"
+        android:text="@string/preview"
         android:textColor="@color/colorDarkPurple"
         android:textColorHint="#FFFFFF"
         android:textSize="36sp"
         android:textStyle="bold"
-        app:drawableTint="#673AB7" />
+        app:drawableTint="#673AB7"
+        app:drawableLeftCompat="@drawable/ic_eye_black_24" />
 
     <TextView
         android:id="@+id/textView10"
@@ -28,7 +28,7 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingBottom="20dp"
-        android:text="Question:"
+        android:text="@string/question"
         android:textColor="@color/colorBlack"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -45,6 +45,7 @@
         android:textColor="@color/colorBlack"
         android:textSize="18sp"
         android:textStyle="bold" />
+
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
@@ -52,7 +53,7 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingBottom="20dp"
-        android:text="Correct Answer:"
+        android:text="@string/correct_answer"
         android:textColor="@color/colorBlack"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -84,7 +85,7 @@
             android:layout_weight="1"
             android:background="@drawable/rounded_corners"
             android:drawableLeft="@drawable/ic_arrow_back_purple_24"
-            android:text="BACK"
+            android:text="@string/back"
             app:backgroundTint="@color/colorPurple" />
 
         <Button
@@ -94,7 +95,7 @@
             android:layout_weight="1"
             android:background="@drawable/rounded_corners"
             android:drawableRight="@drawable/ic_arrow_forward_purple_24"
-            android:text="NEXT"
+            android:text="@string/next"
             app:backgroundTint="@color/colorDarkPurple" />
     </LinearLayout>
 
@@ -108,7 +109,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corners"
-            android:text="OK, good to go!"
+            android:text="@string/ok_good_to_go"
             app:backgroundTint="@color/colorAccent" />
     </LinearLayout>
 </LinearLayout>

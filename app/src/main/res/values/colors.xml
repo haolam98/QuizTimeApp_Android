@@ -10,6 +10,8 @@
     <color name="colorPurple">#e0a8ff</color>
     <color name="colorDarkPurple">#660A98</color>
     <color name="colorLightGreen">#FF62F268</color>
+    <color name="colorDarkGrey">#A9A9A9</color>
+
 
 
 </resources>

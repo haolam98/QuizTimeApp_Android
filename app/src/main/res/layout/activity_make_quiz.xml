@@ -6,13 +6,16 @@
     android:layout_height="match_parent"
     android:background="@color/colorPurple"
     android:orientation="vertical"
-    tools:context=".MakeQuizActivity">
+    tools:context=".feature_makequiz.MakeQuizActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="20dp">
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp">
 
         <TextView
             android:id="@+id/textView2"
@@ -30,7 +33,9 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="@string/enter_quiz_s_title"
+            android:importantForAutofill="no"
             android:inputType="textPersonName"
+            android:scrollbars="vertical"
             android:textColor="@color/colorBlack" />
     </LinearLayout>
 
@@ -40,90 +45,50 @@
         android:orientation="horizontal"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:paddingBottom="20dp">
+        android:paddingBottom="10dp">
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/duration"
+            android:text="@string/description"
             android:textColor="@color/colorBlack"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editText_makeQuiz_hour"
-            android:layout_width="50dp"
+            android:id="@+id/editText_makeQuiz_description"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="35"
             android:ems="10"
-            android:inputType="number" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="hour"
-            android:textColor="@color/colorBlack"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/editText_makeQuiz_minute"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="35"
-            android:ems="10"
-            android:inputType="number" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="minute"
-            android:textColor="@color/colorBlack"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:hint="@string/this_is_the_quiz_for"
+            android:importantForAutofill="no"
+            android:inputType="textLongMessage|text"
+            android:scrollbars="vertical" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:paddingBottom="20dp">
+        android:paddingBottom="10dp">
+
         <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total:"
+            android:text="@string/total"
             android:textColor="@color/colorBlack"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView_makeQuiz_totalQuestion"
-            android:layout_width="155dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="@color/colorBlack"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Score:"
-            android:textColor="@color/colorBlack"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView_makeQuiz_totalScore"
-            android:layout_width="109dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
             android:textColor="@color/colorBlack"
@@ -131,7 +96,7 @@
             android:textStyle="bold" />
 
 
-</LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -145,30 +110,62 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:paddingBottom="10dp"
-            android:text="List of questions:"
+            android:text="@string/list_of_questions"
             android:textColor="@color/colorBlack"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <ListView
             android:id="@+id/list_makeQuiz_questionList"
-            android:layout_width="match_parent"
-            android:layout_height="409dp"
+            android:layout_width="wrap_content"
+            android:layout_height="322dp"
             android:background="@drawable/rounded_corners" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
+            android:id="@+id/floatingActionButton_makeQuiz_addQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:clickable="true"
             android:focusable="true"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:tint="@color/colorWhite"
             app:backgroundTint="@color/colorDarkPurple"
             app:srcCompat="@drawable/ic_add_purple_24" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_makeQuiz_SaveDraft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="quizMaking_DraftClicked"
+                android:paddingTop="10dp"
+                android:text="@string/save_draft"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorDarkGrey" />
+
+            <Button
+                android:id="@+id/button_makeQuiz_Done"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="quizMaking_doneClicked"
+                android:paddingTop="10dp"
+                android:text="@string/done"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimary" />
+
+        </LinearLayout>
 
     </LinearLayout>
 </LinearLayout>

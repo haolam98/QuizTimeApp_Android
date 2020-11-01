@@ -11,8 +11,8 @@
         android:title="Quick Access"
         android:icon="@drawable/ic_fire_orange_24dp" />
     <item
-        android:id="@+id/offline_storage"
+        android:id="@+id/about_us"
         android:title="Offline Storage"
-        android:icon="@drawable/ic_store_blue_24dp" />
+        android:icon="@drawable/ic_info_green_24" />
 
 </menu>

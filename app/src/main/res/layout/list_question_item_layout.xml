@@ -28,6 +28,7 @@
             android:layout_height="match_parent"
             android:layout_weight="15"
             android:gravity="center_vertical"
+            android:scrollbars="vertical"
             android:text="Question Content"
             android:textColor="@color/colorDarkPurple"
             android:textSize="18sp" />
@@ -38,7 +39,7 @@
             android:layout_height="match_parent"
             android:layout_weight="15"
             android:gravity="center_vertical"
-            android:text="Question Type"
+            android:text="Answer"
             android:textColor="@color/colorDarkPurple"
             android:textSize="14sp"
             android:textStyle="bold" />

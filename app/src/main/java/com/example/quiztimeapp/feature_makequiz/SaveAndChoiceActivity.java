@@ -1,8 +1,10 @@
-package com.example.quiztimeapp;
+package com.example.quiztimeapp.feature_makequiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.quiztimeapp.R;
 
 public class SaveAndChoiceActivity extends AppCompatActivity {
 

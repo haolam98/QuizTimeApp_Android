@@ -24,4 +24,52 @@
         2) You can review your quiz, but cannot edit it. Edit/Modify feature only available when you make your quiz online\n
     </string>
 
+    //Sign Up strings
+    <string name="SignUp">Sign Up </string>
+    <string name="Name">Name: </string>
+    <string name="Email">Email: </string>
+    <string name="PhoneNumber">Phone Number (Optional): </string>
+    <string name="password">Password: </string>
+    <string name="Type">You are: </string>
+    <string name="student">Student </string>
+    <string name="teacher">Teacher </string>
+    <string name="title_activity_account">AccountActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="description">Description:</string>
+    <string name="total">Total Questions: </string>
+    <string name="list_of_questions">List of questions:</string>
+    <string name="this_is_the_quiz_for">This is the quiz for...</string>
+    <string name="offline_only">OFFLINE ONLY</string>
+    <string name="successfully_saved">Successfully saved!</string>
+    <string name="make_it_online">MAKE IT ONLINE!</string>
+    <string name="preview">PREVIEW</string>
+    <string name="question">Question:</string>
+    <string name="correct_answer">Correct Answer:</string>
+    <string name="back">BACK</string>
+    <string name="next">NEXT</string>
+    <string name="ok_good_to_go">OK, good to go!</string>
+    <string name="your_email_address">Your Email Address:</string>
+    <string name="enter_your_email_here">Enter your email here</string>
+    <string name="share_my_quiz_to">Share my quiz to:</string>
+    <string name="done">DONE</string>
+    <string name="save_draft">SAVE DRAFT</string>
+    <string name="saved">SAVED!</string>
+    <string name="saved_local_mess">Your quiz has been sucuessfully saved!\nNow, you can view or edit your quiz at Local Storage</string>
+    <string name="or">OR</string>
+    <string name="multiple_choice">Multiple Choice</string>
+    <string name="short_answer">Short Answer</string>
+    <string name="what_type_of_question_you_want_to_add">What type of question you want to add?</string>
+
+
 </resources>

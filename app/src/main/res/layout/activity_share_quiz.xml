@@ -7,29 +7,32 @@
     android:background="@color/colorPurple"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".ShareQuizActivity">
+    tools:context=".feature_set_and_share_quiz.ShareQuizActivity">
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/textView_shareQuiz_userEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:paddingBottom="10dp"
-        android:text="Your Email Address:"
+        android:paddingBottom="20dp"
+        android:text="@string/your_email_address"
         android:textColor="@color/colorBlack"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/editTextTextEmailAddress_shareQuiz_userEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_coreners_white"
         android:ems="10"
-        android:hint="Enter your email here"
+        android:hint="@string/enter_your_email_here"
+        android:importantForAutofill="no"
         android:inputType="textEmailAddress"
-        android:padding="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
         android:textColor="@color/colorWhite"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -40,16 +43,16 @@
         android:layout_height="wrap_content"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:paddingBottom="10dp"
-        android:text="Share my quiz to:"
+        android:paddingBottom="20dp"
+        android:text="@string/share_my_quiz_to"
         android:textColor="@color/colorBlack"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <ListView
         android:id="@+id/list_shareQuiz_list"
-        android:layout_width="match_parent"
-        android:layout_height="396dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="400dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton3"

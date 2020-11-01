@@ -10,11 +10,13 @@
         android:roundIcon="@mipmap/quiz_time_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShareQuizActivity"></activity>
-        <activity android:name=".SaveAndChoiceActivity" />
-        <activity android:name=".PreviewQuizActivity" />
-        <activity android:name=".AddQuestionActivity" />
-        <activity android:name=".MakeQuizActivity" />
+        <activity android:name=".feature_takequiz.TakeQuizActivity"></activity>
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".feature_set_and_share_quiz.ShareQuizActivity" />
+        <activity android:name=".feature_makequiz.SaveAndChoiceActivity" />
+        <activity android:name=".feature_makequiz.PreviewQuizActivity" />
+        <activity android:name=".feature_makequiz.AddQuestionActivity" />
+        <activity android:name=".feature_makequiz.MakeQuizActivity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
