@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".QuickAcessFragment">
+
+
+    <TextView
+        android:id="@+id/mp_top_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:paddingTop="50dp"
+        android:paddingBottom="35dp"
+        android:text="@string/you_are_here_to"
+        android:textColor="@color/colorWhite"
+        android:textSize="70sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_quickAccess_takeQuiz"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/round_border_button"
+        android:paddingTop="4dp"
+        android:text="@string/take_quiz"
+        android:textColor="@color/colorBlack"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/colorOrange" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="35dp"
+        android:paddingBottom="35dp"
+        android:text="@string/or"
+        android:textColor="@color/colorWhite"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_quickAccess_makeQuiz"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/round_border_button"
+        android:paddingTop="4dp"
+        android:text="@string/make_quiz"
+        android:textColor="@color/colorBlack"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/colorPurple" />
+
+</LinearLayout>
