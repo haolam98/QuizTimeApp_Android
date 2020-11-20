@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_OnlineAccount"
+            android:title="Online Account">
+            <menu>
+                <item
+                    android:id="@+id/nav_AcountMainBoard"
+                    android:title="Main Board"/>
+                <item
+                    android:id="@+id/nav_AccountSetting"
+                    android:title="Setting"/>
+                <item
+                    android:id="@+id/nav_AccountSignOut"
+                    android:title="Sign Out"/>
+            </menu>
+        </item>
+        <item
+            android:id="@+id/nav_OfflineStorage"
+            android:title="Offline Storage"></item>
+
+
+    </group>
+
+
+</menu>

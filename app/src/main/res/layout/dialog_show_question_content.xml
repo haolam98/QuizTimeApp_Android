@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="@string/question"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/DialogShowQuestion_questionContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView23"
+                android:paddingBottom="10dp"
+                android:scrollbars="vertical"
+                android:text="@string/question_content"
+                android:textColor="@color/colorBlack" />
+
+
+            <TextView
+                android:id="@+id/DialogShowQuestion_attch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/DialogShowQuestion_questionContent"
+                android:paddingBottom="10dp"
+                android:text="@string/attachment"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/DialogShowQuestion_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/DialogShowQuestion_attch"
+                android:paddingBottom="10dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/DialogShowQuestion_image"
+                android:paddingBottom="10dp"
+                android:text="@string/answer"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/DialogShowQuestion_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView25"
+                android:paddingBottom="10dp"
+                android:scrollbars="vertical"
+                android:text="@string/question_s_answer"
+                android:textColor="@color/colorBlack" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/DialogShowQuestion_answer"
+                android:paddingBottom="10dp"
+                android:text="@string/type"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/DialogShowQuestion_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView27"
+                android:paddingBottom="10dp"
+                android:text="@string/type"
+                android:textColor="@color/colorBlack" />
+
+
+            <Button
+                android:id="@+id/DialogShowQuestion_delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/DialogShowQuestion_type"
+                android:background="@drawable/rounded_corners"
+                android:paddingBottom="10dp"
+                android:text="@string/ok"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorDarkPurple" />
+
+            <Button
+                android:id="@+id/DialogShowQuestion_ok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/DialogShowQuestion_delete"
+                android:background="@drawable/rounded_corners"
+                android:paddingTop="10dp"
+                android:text="@string/delete_this_question"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorDarkGrey" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</LinearLayout>

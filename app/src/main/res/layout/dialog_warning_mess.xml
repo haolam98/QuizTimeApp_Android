@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/warning_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorDarkPurple"
+        android:gravity="center"
+        android:text="@string/warning"
+        android:textColor="@color/colorWhite"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/warning_mess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="@string/saved_local_mess"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/dialog_warning_okBttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ok_do_it"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/colorOrangeRed" />
+
+    <Button
+        android:id="@+id/dialog_warning_cancelBttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/do_not_cancel"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/colorBlack" />
+
+</LinearLayout>

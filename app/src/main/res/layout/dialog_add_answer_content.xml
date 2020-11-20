@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/textView_dialog_addAns_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:text="@string/answer"
+        android:textColor="@color/colorDarkPurple"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine_dialog_addAns_content"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/please_type_your_answer_here"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:paddingBottom="10dp" />
+
+    <Button
+        android:id="@+id/dialog_addAns_Ok_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners"
+        android:text="@string/ok"
+        app:backgroundTint="@color/colorDarkPurple" />
+
+
+    <Button
+        android:id="@+id/dialog_addAns_cancel_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners"
+        android:text="@android:string/cancel"
+        app:backgroundTint="@color/colorBlack" />
+
+</LinearLayout>
