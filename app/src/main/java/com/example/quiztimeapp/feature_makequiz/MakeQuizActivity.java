@@ -1,16 +1,21 @@
 package com.example.quiztimeapp.feature_makequiz;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -27,12 +32,18 @@ import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class MakeQuizActivity extends AppCompatActivity {
 
+    //for passing data back&forth
+    public static final String EXTRA_MESSAGE = "com.example.quiztimeapp.extra.MESSAGE";
+    public static final int TEXT_REQUEST = 1;
+
     private boolean exitActivity= false;
     static int choosedType= -1;
+    static boolean isDeleted= false;
+    static boolean isBackFromAdd_activity = false;
+    question myNewQuestion;
 
     //Share Preferences
     private SharedPreferences mPreferences;
@@ -57,7 +68,9 @@ public class MakeQuizActivity extends AppCompatActivity {
     public static ArrayList<question> my_questions;
 
     listViewAdaper_forQuestions my_adapter;
-
+    /*
+    ----- HANDLE LIFE-CYCLE FU :
+    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +85,8 @@ public class MakeQuizActivity extends AppCompatActivity {
         addQuestion_bttn = findViewById(R.id.floatingActionButton_makeQuiz_addQuestion);
         totalQues_textView = findViewById(R.id.textView_makeQuiz_totalQuestion);
         done_bttn = findViewById(R.id.button_makeQuiz_Done);
+
+        //hook listView
         myList = findViewById(R.id.list_makeQuiz_questionList);
 
         //Initialize values and obj
@@ -105,59 +120,6 @@ public class MakeQuizActivity extends AppCompatActivity {
         });
     }
 
-
-
-    private void setupListView() {
-        Log.d(MakeQuizActivity.class.getSimpleName(),"SETUP LIST VIEW: Setting up list view...");
-        Log.d(MakeQuizActivity.class.getSimpleName(),"list items: "+my_questions.size());
-
-        my_adapter = new listViewAdaper_forQuestions(this,R.layout.questions_row, my_questions);
-        myList.setAdapter(my_adapter);
-    }
-
-    private void retrieveDat_fromSharPref() {
-        Log.d(MakeQuizActivity.class.getSimpleName(),"ON CREATE: Retrieving data from SHARE PREFERENCES...");
-
-        //retrieve data
-        title = mPreferences.getString("QUIZ_title","");
-        des = mPreferences.getString("QUIZ_des","");
-        total_question = mPreferences.getInt("QUIZ_total_question",0);
-        //set to view
-        title_txt.setText(title);
-        description_txt.setText(des);
-        totalQues_textView.setText(String.valueOf(total_question));
-
-        Gson gson = new Gson();
-        String json = mPreferences.getString("QUIZ_list_ques", "");
-        Log.d(MakeQuizActivity.class.getSimpleName(),"json:  "+json);
-        if(json!="") {
-            Type type = new TypeToken<ArrayList<question>>() {
-            }.getType();
-            my_questions = gson.fromJson(json, type);
-            //refresh list view
-            setupListView();
-        }
-
-        Log.d(MakeQuizActivity.class.getSimpleName(),"ON CREATE: Retrieving data COMPLETED...");
-
-    }
-    private void handleItemClicked(int position) {
-        boolean isDeleted = false;
-        //popup message which show content of the selected question
-
-        //if deleted button is clicked ->delete item from list
-        if (isDeleted==true)
-        {
-            my_questions.remove(position);
-            //update total questions
-            total_question-= 1;
-            totalQues_textView.setText(String.valueOf(total_question));
-            //update list view again
-            setupListView();
-        }
-
-
-    }
     @Override
     protected void onPause() {
         super.onPause();
@@ -191,82 +153,172 @@ public class MakeQuizActivity extends AppCompatActivity {
         retrieveDat_fromSharPref();
         Log.d(MakeQuizActivity.class.getSimpleName(), "ON RESUME: Retrieve data from SHARE PREFERENCES...COMPLETED");
     }
+
+    //Receiving data from other Activity
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.d(MakeQuizActivity.class.getSimpleName(), "OnActivityResult: Retrieve question's content from AddQuestionActicvity...");
+
+        if (requestCode == TEXT_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                //retrieve data send from other activity
+                myNewQuestion = new question();
+                myNewQuestion = (question) data.getSerializableExtra(AddQuestionActivity.EXTRA_REPLY);
+                isBackFromAdd_activity = true;
+                Log.d(MakeQuizActivity.class.getSimpleName(), "OnActivityResult: Add new_q to questions list:  "+myNewQuestion.toString());
+
+            }
+        }
+
+    }
+
+    private void retrieveDat_fromSharPref() {
+        Log.d(MakeQuizActivity.class.getSimpleName(),"ON CREATE: Retrieving data from SHARE PREFERENCES...");
+
+        //retrieve data
+        title = mPreferences.getString("QUIZ_title","");
+        des = mPreferences.getString("QUIZ_des","");
+        total_question = mPreferences.getInt("QUIZ_total_question",0);
+        //set to view
+        title_txt.setText(title);
+        description_txt.setText(des);
+        totalQues_textView.setText(String.valueOf(total_question));
+
+        Gson gson = new Gson();
+        String json = mPreferences.getString("QUIZ_list_ques", "");
+        Log.d(MakeQuizActivity.class.getSimpleName(),"json:  "+json);
+        if(json!="") {
+            Type type = new TypeToken<ArrayList<question>>() {
+            }.getType();
+            my_questions = gson.fromJson(json, type);
+            if (isBackFromAdd_activity==true)
+            {
+                //add new question
+                my_questions.add(myNewQuestion);
+                //reset bool
+                isBackFromAdd_activity = false;
+            }
+            //refresh list view
+            setupListView();
+        }
+
+        Log.d(MakeQuizActivity.class.getSimpleName(),"ON CREATE: Retrieving data COMPLETED...");
+
+    }
+    private void setupListView() {
+        Log.d(MakeQuizActivity.class.getSimpleName(),"SETUP LIST VIEW: Setting up list view...");
+        Log.d(MakeQuizActivity.class.getSimpleName(),"list items: "+my_questions.size());
+
+        my_adapter = new listViewAdaper_forQuestions(this,R.layout.questions_row, my_questions);
+        myList.setAdapter(my_adapter);
+    }
+
+
 /*
 ----- HANDLE ON-CLICK LISTENER:
 */
     private void addBttn_Clicked() {
-        //pop-up dialog to choose question type
-        Log.d(MakeQuizActivity.class.getSimpleName(),"POP-UP MESS: Ask user type of question to add...");
-        final Dialog myDialog = new Dialog(MakeQuizActivity.this);
-        myDialog.setContentView(R.layout.dialog_choose_questype);
-
-        mc_bttn = (Button) myDialog.findViewById(R.id.chooseType_mulCh_bttn);
-        sa_bttn = (Button) myDialog.findViewById(R.id.chooseType_shAns_bttn) ;
-        ImageButton cancel_bttn = (ImageButton) myDialog.findViewById(R.id.chooseType_cancel);
-        myDialog.show();
-        // When buttons clicked...
-        mc_bttn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(MakeQuizActivity.class.getSimpleName(),"Multiple Choice Button is clicked...");
-                choosedType= 1;
-                myDialog.cancel();
-            }
-        });
-        sa_bttn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(MakeQuizActivity.class.getSimpleName(),"Short Answer Button is clicked...");
-                choosedType= 2;
-                myDialog.cancel();
-            }
-        });
-        cancel_bttn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(MakeQuizActivity.class.getSimpleName(),"Cancel Button is clicked...");
-                //reset
-                choosedType= -1;
-                myDialog.cancel();
-            }
-        });
-
         // go to activity
-        Log.d(MakeQuizActivity.class.getSimpleName(),"User choice (choosedType): "+choosedType);
-        if (choosedType!=-1)
+        Log.d(MakeQuizActivity.class.getSimpleName(),"GO TO ACTIVITY : addQuestion activity");
+
+        Intent intent = new Intent(getApplicationContext(), AddQuestionActivity.class);
+        //go to activity
+        startActivityForResult(intent,TEXT_REQUEST);
+    }
+
+    private void handleItemClicked(final int position) {
+
+        //popup message which show content of the selected question
+        Log.d(MakeQuizActivity.class.getSimpleName(),"POP-UP MESS: Popup selected item question's content...");
+        final Dialog myDialog = new Dialog(MakeQuizActivity.this);
+        myDialog.setContentView(R.layout.dialog_show_question_content);
+
+        TextView question = (TextView)myDialog.findViewById(R.id.DialogShowQuestion_questionContent);
+        TextView answer = (TextView)myDialog.findViewById(R.id.DialogShowQuestion_answer);
+        TextView type = (TextView)myDialog.findViewById(R.id.DialogShowQuestion_type);
+        TextView attch = (TextView)myDialog.findViewById(R.id.DialogShowQuestion_attch);
+        ImageView image = (ImageView) myDialog.findViewById(R.id.DialogShowQuestion_image);
+        Button ok_bttn = (Button)myDialog.findViewById(R.id.DialogShowQuestion_ok);
+        Button del_bttn = (Button)myDialog.findViewById(R.id.DialogShowQuestion_delete);
+
+        question q = my_questions.get(position);
+        if (q.getImageAttachment()=="" || q.getImageAttachment()=="N/A"||q.getImageAttachment()==null)
         {
-            if (choosedType==1)
-            {
-                // multiple choice
-                Log.d(MakeQuizActivity.class.getSimpleName(),"Go to multiple choice Activity...");
-            }
-            else if (choosedType==2)
-            {
-                //short answer
-                Log.d(MakeQuizActivity.class.getSimpleName(),"Go to Short Answer Activity...");
-
-
-            }
-            //reset choosedType to -1
-            choosedType=-1;
+            //make image part invisible
+            attch.setVisibility(View.INVISIBLE);
+            image.setVisibility(View.INVISIBLE);
         }
         else
         {
-            Log.d(MakeQuizActivity.class.getSimpleName(),"User clicked cancel button-> DO NOTHING!");
+            //set image
         }
+        String q_content = decode_questionContent(q.getQuestion_content());
+
+        question.setText(q_content);
+        answer.setText(q.getAnswer());
+        type.setText(q.getQuestion_type());
+        myDialog.show();
+        //Ok button clicked!
+        ok_bttn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isDeleted = false;
+                myDialog.cancel();
+            }
+        });
+        del_bttn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(MakeQuizActivity.class.getSimpleName(), "onClickItem - Delete Clicked: deleting item: "+position);
+                isDeleted = true;
+                deleteItem(position);
+                myDialog.cancel();
+            }
+        });
+
+
+
+    }
+    private  void deleteItem(int position)
+    {
+        //if deleted button is clicked ->delete item from list
+        if (isDeleted==true)
+        {
+            my_questions.remove(position);
+            //update total questions
+            total_question-= 1;
+            totalQues_textView.setText(String.valueOf(total_question));
+            //update list view again
+            setupListView();
+        }
+        //reset isDeleted
+        isDeleted=false;
+
     }
 
+    private String decode_questionContent(String question_content) {
+
+        return question_content;
+    }
 
     public void quizMaking_doneClicked(View view)
     {
         //save draft to DB
-
+        saveDat_toDB();
         //pop up message
 
-        //reset shared preference data save
-
         //go to preview quiz activity
+        Log.d(MakeQuizActivity.class.getSimpleName(),"GO TO ACTIVITY : preview activity");
+        Intent intent = new Intent(getApplicationContext(), PreviewQuizActivity.class);
 
+        //gather quiz info + questions list
+        int id = myDB.getCurrent_Quiz_ID();
+       // Quiz new_quiz = new Quiz( title,  des,  "N/A",  mdate, total_question, id);
+        intent.putExtra("QUESTION_TOTAL",total_question);
+        intent.putExtra("QUESTION_LIST",my_questions);
+        //go to activity
+        startActivity(intent);
     }
 
     public void quizMaking_DraftClicked(View view) {
@@ -276,6 +328,7 @@ public class MakeQuizActivity extends AppCompatActivity {
         reset();
         // pop up message
         popup_saveMess();
+        finish();
 
 
     }

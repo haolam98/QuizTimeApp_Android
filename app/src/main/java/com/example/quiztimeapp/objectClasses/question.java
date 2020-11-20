@@ -1,6 +1,8 @@
 package com.example.quiztimeapp.objectClasses;
 
-public class question {
+import java.io.Serializable;
+
+public class question implements Serializable {
     String question_content;
     String question_type;
     String imageAttachment;

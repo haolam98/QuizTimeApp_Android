@@ -8,9 +8,15 @@
     <color name ="colorBlack">#000000</color>
     <color name="colorOrange">#FFA700</color>
     <color name="colorPurple">#e0a8ff</color>
+    <color name="colorBabyPurple">#f4c9ff</color>
+    <color name="lightBabyPurple">#ffe0f7</color>
+    <color name="colorPinkPurple">#d752de</color>
     <color name="colorDarkPurple">#660A98</color>
     <color name="colorLightGreen">#FF62F268</color>
     <color name="colorDarkGrey">#A9A9A9</color>
+    <color name="colorOrangeRed">#e35d6a</color>
+    <color name="colorDarkOrange">#f26200</color>
+
 
 
 

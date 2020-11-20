@@ -66,10 +66,37 @@
     <string name="save_draft">SAVE DRAFT</string>
     <string name="saved">SAVED!</string>
     <string name="saved_local_mess">Your quiz has been sucuessfully saved!\nNow, you can view or edit your quiz at Local Storage</string>
-    <string name="or">OR</string>
+
     <string name="multiple_choice">Multiple Choice</string>
     <string name="short_answer">Short Answer</string>
     <string name="what_type_of_question_you_want_to_add">What type of question you want to add?</string>
+    <string name="question_content">Question Content</string>
+    <string name="type">Type:</string>
+    <string name="question_s_answer">question\'s answer</string>
+    <string name="answer">Answer:</string>
+    <string name="attachment">Attachment:</string>
+    <string name="delete_this_question">Delete This Question</string>
+    <string name="ok">OK</string>
+    <string name="question_type">Question Type:</string>
+    <string name="question_content3">Question Content:</string>
+    <string name="enter_your_question_here">Enter your question here</string>
+    <string name="image">Image:</string>
+    <string name="attach_file">attach file</string>
+    <string name="add">ADD</string>
+    <string name="textview">TextView</string>
+    <string name="please_type_your_answer_here">Please type your answer here</string>
+    <string name="warning">WARNING!</string>
+    <string name="warning_mess">Your question content will not be saved if you choose cancel!</string>
+    <string name="warning_mess2">You don\'t have any answer for this question.\nYou can add it now by clicking the " + " circle button. \nOR\nYou can add the answer later</string>
+    <string name="ok_do_it">OK, DO IT!</string>
+    <string name="do_not_cancel">DO NOT CANCEL</string>
+    <string name="ok_will_do_later">OK, WILL DO LATER!</string>
+    <string name="I_want_to_add_now">I WANT TO ADD ANSWER NOW</string>
+    <string name="please_enter_your_quiz_code_below">Please enter your Quiz Code below:</string>
+    <string name="question_s_content">Question\'s content</string>
+    <string name="attach_image">Attach Image:</string>
+    <string name="enter_your_answer_here">Enter your answer here</string>
+    <string name="hello">Hello!</string>
 
 
 </resources>

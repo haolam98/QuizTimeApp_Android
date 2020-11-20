@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/quiz_time_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".feature_takequiz.TakeQuizActivity"></activity>
+        <activity android:name=".featue_onlineAccount.OnlineAccountActivity"></activity>
+        <activity android:name=".feature_takequiz.AnswerQuestionsActivity" />
+        <activity android:name=".feature_takequiz.TakeQuizActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".feature_set_and_share_quiz.ShareQuizActivity" />
         <activity android:name=".feature_makequiz.SaveAndChoiceActivity" />

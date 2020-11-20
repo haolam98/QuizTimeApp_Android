@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPurple"
+    android:background="@color/lightBabyPurple"
     android:orientation="vertical"
     tools:context=".feature_makequiz.MakeQuizActivity">
 
@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title"
-            android:textColor="@color/colorBlack"
+            android:textColor="@color/colorDarkPurple"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/description"
-            android:textColor="@color/colorBlack"
+            android:textColor="@color/colorDarkPurple"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -65,7 +65,8 @@
             android:hint="@string/this_is_the_quiz_for"
             android:importantForAutofill="no"
             android:inputType="textLongMessage|text"
-            android:scrollbars="vertical" />
+            android:scrollbars="vertical"
+            android:textColor="@color/colorBlack" />
 
     </LinearLayout>
 
@@ -82,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/total"
-            android:textColor="@color/colorBlack"
+            android:textColor="@color/colorDarkPurple"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -113,7 +114,7 @@
             android:paddingRight="20dp"
             android:paddingBottom="10dp"
             android:text="@string/list_of_questions"
-            android:textColor="@color/colorBlack"
+            android:textColor="@color/colorDarkPurple"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -133,37 +134,38 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:tint="@color/colorWhite"
-            app:backgroundTint="@color/colorDarkPurple"
+            app:backgroundTint="@color/colorPinkPurple"
             app:srcCompat="@drawable/ic_add_purple_24" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="10dp">
 
             <Button
                 android:id="@+id/button_makeQuiz_SaveDraft"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corners"
                 android:gravity="center"
                 android:onClick="quizMaking_DraftClicked"
-                android:paddingTop="10dp"
                 android:text="@string/save_draft"
                 android:textColor="@color/colorBlack"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:backgroundTint="@color/colorDarkGrey" />
+                app:backgroundTint="@color/colorPurple" />
 
             <Button
                 android:id="@+id/button_makeQuiz_Done"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corners"
                 android:onClick="quizMaking_doneClicked"
-                android:paddingTop="10dp"
                 android:text="@string/done"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:backgroundTint="@color/colorPrimary" />
+                app:backgroundTint="@color/colorDarkPurple" />
 
         </LinearLayout>
 

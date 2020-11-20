@@ -1,9 +1,10 @@
 package com.example.quiztimeapp.objectClasses;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Quiz {
+public class Quiz implements Serializable {
     private String title;
     private String description;
     private String attachment;
